@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+     <!-- Bootstrap Stylesheet-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <!-- Bootstrap Script-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+     
+     <!-- STYLESHEET -->
+     <style>
+       @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+         
+         
+          .container, .hl_page-preview--content .col--f0x1xPbXc, .hl_page-preview--content .row-6b48c8MlYD, .hl_page-preview--content .section-AfDoX8QFe7{
+       		padding: 0;
+       }
+       #section-AfDoX8QFe7>.inner{
+			margin: 0;
+         width: 100% !important;
+         max-width: 100% !important;
+       }
+        .navbar{
+            --bs-navbar-padding-y: 2rem;
+        }
+        #navbar-original{
+            z-index: 100000;
+          width: 100%;
+        }
+        .navbar-toggler{
+            font-size: 13px;
+            border: none;
+        }
+        a.navbar-brand{
+            height: 100%;
+            width: 220px;
+            /* margin-left: -50px; */
+            margin-top: -10px;
+        }
+        a.navbar-brand img{
+            height: 100%;
+            width: 100%;
+        }
+        .navbar>.container{
+            gap: 2rem !important;
+        }
+        .navbar-collapse{
+            justify-content: space-around;
+        }
+        .navbar-nav{
+            width: 100%;
+            justify-content: space-around !important;
+        }
+        a.nav-link, a.dropdown-item, .nav-link.login>strong{
+            font-size: 1.15rem !important;
+          font-family: "Lora", serif !important;
+        }
+        .nav-link:hover{
+            transform: scale(1.1);
+        }
+        .nav-link.active:hover{
+            transform: none;
+        }
+        .nav-link.active{
+            font-weight: 700;
+        }
+       .nav-link.login{
+            	margin-left: 2rem;
+            }
+        .try-for-free{
+            font-size: 1rem !important;
+            border: 2px solid #fff;
+            padding: 0 25px;
+            margin-left: 20px;
+            margin-top: -5px;
+            transition: all 1.5s ease;
+        }
+        .nav-item.try-for-free:hover{
+            background-color: #fff;
+        }
+        .nav-link.try-link:hover{
+            transform: none;
+            color: #000;
+        }
+        /* For the duplicate */
+        /* .navbar-duplicate{
+            position: absolute;
+            top: 0;
+            left: 0;
+        } */
+        #nav_scroll{
+            /* box-shadow: 0 0 17px 0 #000; */
+            transition: all 1s ease-in-out;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        /* .hide{
+            margin-top: -100px;
+        }
+        .reveal{
+            margin-top: 0;
+        } */
+        .navbar-duplicate .nav-item .nav-link{
+            color: #7c7c7c;
+        }
+        .navbar-duplicate .nav-link.active{
+            color: #000;
+        }
+        .navbar-duplicate .nav-item.try-for-free{
+            border-color: #000;
+        }
+        .navbar-duplicate .nav-item.try-for-free:hover{
+            background-color: #000;
+        }
+        .navbar-duplicate .nav-link.try-link:hover{
+            color: #fff;
+        }
+        .scroll-up #nav_scroll{
+            filter: drop-shadow(0 -10px 20px #000);
+        }
+        .scroll-down #nav_scroll{
+            transform: translate3d(0, -100%, 0);
+        }
+          /* For small devices */
+          @media (480px < width <= 1300px) {
+              #navbar-original.navbar{
+          
+                 width: 100% !important;
+        }
+                 a.nav-link, a.dropdown-item{
+            font-size: 1.15rem !important;
+        }
+             .scroll-up #nav_scroll{
+            filter: none;
+            box-shadow: 0 -10px 20px #000;
+        }
+            a.navbar-brand{
+            width: 190px;
+        }
+             .nav-link:hover{
+            transform: none;
+        }
+        .navbar>.container{
+            gap: 1rem !important;
+        }
+             div.offcanvas-body{
+       		margin-left: 0;
+       }
+        /* .try-for-free{
+            font-size: 1rem;
+            border: 2px solid #fff;
+            padding: 0 5px;
+            margin-left: 0;
+            margin-top: 10px;
+        } */
+        /* .nav-link.login{
+            margin-top: 30px !important;
+            border-top: 1px solid #7c7c7c;
+        } */
+        }
+             /* For small devices */
+       @media (480px < width <= 640px) {
+       		    a.navbar-brand{
+            height: 100%;
+            width: 180px;
+            margin-left: 0;
+            margin-top: 0;
+        }
+               #navbar-original.navbar{
+           	 margin-left: -10px;
+        }
+       }
+
+        /* For smaller devices */
+        @media (width <= 480px) {
+               #navbar-original.navbar{
+           	 margin-left: -10px;
+                 width: 100vw;
+        }
+               a.nav-link, a.dropdown-item{
+            font-size: 1.15rem !important;
+        }
+          .nav-link.login{
+            	margin-left: 0;
+            }
+          .scroll-up #nav_scroll{
+            filter: none;
+            box-shadow: 0 -10px 20px #000;
+        }
+            a.navbar-brand{
+            height: 100%;
+            width: 180px;
+            margin-left: 0;
+            margin-top: 0;
+        }
+           .nav-link:hover{
+            transform: none;
+        }
+        .try-for-free{
+            font-size: 1rem;
+            border: 2px solid #fff;
+            padding: 0 5px;
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        .nav-link.login{
+            margin-top: 30px !important;
+            border-top: 1px solid #7c7c7c;
+        }
+                div.offcanvas-body{
+       		margin-left: 0;
+       }
+        }
+     </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="nav_scroll" class="navbar navbar-expand-xl hide navbar-duplicate" style="background-color: #FAF9F6;" data-bs-theme="light">
+        <div class="container">
+          <a class="navbar-brand" href="https://pixonomi.com/home">
+            <img src="https://storage.googleapis.com/msgsndr/5j2MPEwpyHAxvamQdcv6/media/654d65f67b3caa0d19935d8a.png" alt="Pixonomi">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+            <div class="offcanvas-header">
+              <h3 class="offcanvas-title" id="offcanvasNavbarLabel">Pixonomi</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+          <div class="offcanvas-body">
+           <ul class="navbar-nav flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="https://pixonomi.com/home">PowerPixel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://pixonomi.com/intentionx">IntentionX</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://pixonomi.com/b2b-wizard">B2B Wizard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://pixonomi.com/pricing">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Resources
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://pixonomi.com/compliance">Compliance</a></li>
+                   
+                    <li><a class="dropdown-item" href="https://pixonomi.com/partners-and-affiliates">Partners & Affiliates</a></li>
+                    <li><a class="dropdown-item" href="https://pixonomi.com/contact-us">Contact Us</a></li>
+                    <li><a class="dropdown-item" href="https://pixonomi.com/pricing">FAQ</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="https://app.pixonomi.com/auth/login" class="nav-link login"><strong>Login</strong></a>
+            </li>
+            <li class="nav-item try-for-free">
+                <a href="https://app.gohighlevel.com/v2/preview/7vX5MYvP3F3DSqhI2XHE?notrack=true" class="nav-link try-link">Try for Free</a>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+       <!-- Navbar Duplicate-->
+    <nav id="navbar-original" class="navbar navbar-expand-xl" style="background-color: #000;" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="https://storage.googleapis.com/msgsndr/5j2MPEwpyHAxvamQdcv6/media/659036b1888153660e4680b8.png" alt="Pixonomi">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Pixonomi</h3>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+          <div class="offcanvas-body">
+                   <ul class="navbar-nav flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="https://pixonomi.com/home">PowerPixel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://pixonomi.com/intentionx">IntentionX</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://pixonomi.com/b2b-wizard">B2B Wizard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://pixonomi.com/pricing">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Resources
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://pixonomi.com/compliance">Compliance</a></li>
+                 
+                    <li><a class="dropdown-item" href="https://pixonomi.com/partners-and-affiliates">Partners & Affiliates</a></li>
+                    <li><a class="dropdown-item" href="https://pixonomi.com/contact-us">Contact Us</a></li>
+                    <li><a class="dropdown-item" href="https://pixonomi.com/pricing">FAQ</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="https://app.pixonomi.com/auth/login" class="nav-link login"><strong>Login</strong></a>
+            </li>
+            <li class="nav-item try-for-free">
+                <a href="https://app.gohighlevel.com/v2/preview/7vX5MYvP3F3DSqhI2XHE?notrack=true" class="nav-link try-link">Try for Free</a>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End of Navbar Duplicate -->
+
+     
+    <script>
+        const body = document.body;
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', ()=>{
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0){
+                body.classList.remove("scroll-up");
+            }
+            if(currentScroll > lastScroll && !body.classList.contains("scroll-down")){
+                body.classList.remove("scroll-up");
+                body.classList.add("scroll-down");
+            }
+            if(currentScroll < lastScroll && body.classList.contains("scroll-down")){
+                body.classList.remove("scroll-down");
+                body.classList.add("scroll-up");
+            }
+
+            lastScroll = currentScroll;
+        })
+
+        // window.addEventListener('scroll', ()=>{
+        //     const currentPos = window.pageYOffset;
+
+        //     if (prevScroll > currentPos){
+        //         navbar.classList.add("reveal");
+        //         navbar.classList.add("sticky-top");
+        //     }
+        //     else{
+        //         navbar.classList.remove("reveal");
+        //     }
+
+        //     prevScroll = currentPos;
+        // })
+    </script>
+</body>
+</html>
