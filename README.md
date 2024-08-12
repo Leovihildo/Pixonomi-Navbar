@@ -13,3 +13,5 @@ This project features a custom Navbar developed for Pixonomi, designed based on 
 
 The Navbar was designed to improve user engagement by maintaining visibility while offering a distinct visual contrast based on the user’s scroll position, thus making the navigation intuitive and aesthetically pleasing.
 
+https://leovihildo.github.io/Pixonomi-Navbar/
+Full website: https://pixonomi.com/
